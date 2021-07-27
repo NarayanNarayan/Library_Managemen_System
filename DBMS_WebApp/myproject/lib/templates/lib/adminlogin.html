@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <h3>Admin Login</h3>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+        </p>
+        <h4 style="color:Red;"></h4>
+        {%if not ismached %}<h4 style="color:Red;">Incorrect credentials</h4><br>{% endif %}
+        <form action="{% url 'lib:adminlogin' %}" method="post">
+            <table>
+                {% csrf_token %}
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <center><td><input type="submit" class="submit" value="Sign In"></td></center>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Administrator!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+            
+            <a href="{% url 'lib:adminlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <h2>Admin's HomePage</h2>
+            <table>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:issuebook' %}"><input type="submit" class="submit" value="Issue A Book"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:submitbook' %}"><input type="submit" class="submit" value="Submit A Book"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:add_properbooks' %}"><input type="submit" class="submit" value="Add Proper Books"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_readers' %}"><input type="submit" class="submit" value="Show Reader List"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:add_book' %}"><input type="submit" class="submit" value="Add Book"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_books' %}"><input type="submit" class="submit" value="Show Books List"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:add_admin' %}"><input type="submit" class="submit" value="Add Staff Member"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_admins' %}"><input type="submit" class="submit" value="Show Staff Members List"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{%url 'lib:add_author'%}"><input type="submit" class="submit" value="Add Author"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_authors' %}"><input type="submit" class="submit" value="Show Authors List"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:add_publisher' %}"><input type="submit" class="submit" value="Add Publisher"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_publishers' %}"><input type="submit" class="submit" value="Show Publishers List"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:add_section' %}"><input type="submit" class="submit" value="Add Section"></a></td></center>
+                    </td>
+                    <td>
+                        <center><td><a href="{% url 'lib:show_sections' %}"><input type="submit" class="submit" value="Show Sections List"></a></td></center>
+                    </td>
+                </tr>
+            </table>
+    </center>
+</body>
+</html>

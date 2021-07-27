@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Issue</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+
+            <a href="{% url 'lib:adminlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <h2>Issue a Book</h2>
+        <form action="{% url 'lib:issuebook' %}" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Proper Book Id:</td>
+                    <td><input type="number" id="bookid" name="bid"></td>
+                </tr>
+                <tr>
+                    <td>Book Title:</td>
+                    <td><input type="text" id="booktitle" name="booktitle"></td>
+                </tr>
+                <tr>
+                    <td>Reader Id:</td>
+                    <td><input type="number" id="readerid" name="rid"></td>
+                </tr>
+                <tr>
+                    <td>Date of Issue:</td>
+                    <td><input type="date" id="issuedate" name="issuedate"></td>
+                </tr>
+                <tr>
+                    <td>Issued By:</td>
+                    <td><input type="text" id="issuedby" name="issued_by"></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <center><td><input type="submit" class="submit" value="Issue Book"></td></center>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

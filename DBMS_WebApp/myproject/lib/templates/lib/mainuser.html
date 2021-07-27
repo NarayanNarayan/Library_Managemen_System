@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's HomePage</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <p align="right">
+            <a href="{% url 'lib:userlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <h3>User's HomePage</h3>
+        <h2>Hello {{ request.session.uname }}!</h2>
+            <table>
+                <tr>
+                    <td>
+                        <center><td><a href="{% url 'lib:updateprofile' %}"><input type="submit" class="submit" value="Edit Profile"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="editprofile.html"><input type="submit" class="submit" value="Check Due Fine"></a></td></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><td><a href="editprofile.html"><input type="submit" class="submit" value="Book Issued"></a></td></center>
+                    </td>
+                </tr>
+            </table>
+    </center>
+</body>
+</html>

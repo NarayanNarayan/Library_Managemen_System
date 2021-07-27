@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+            <a href="{% url 'lib:adminlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <h2>Add Book</h2>
+        <form action="{% url 'lib:add_book' %}" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Book Title:</td>
+                    <td><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td><input type="text" id="category" name="category"></td>
+                </tr>
+                <tr>
+                    <td>Author(s):</td>
+                    <td><input type="text" id="author" name="author"></td>
+                </tr>
+                <tr>
+                    <td>Publisher:</td>
+                    <td><input type="text" id="publisher" name="publisher"></td>
+                </tr>
+                <tr>
+                    <td>Total Copies:</td>
+                    <td><input type="number" id="copies_total" name="copies_total"></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <center><td><input type="submit" class="submit" value="Add Book"></td></center>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

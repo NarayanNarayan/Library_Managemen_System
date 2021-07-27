@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+    <h2>Sign Up</h2>
+    <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+    <a href="{% url 'lib:userlogin' %}" type="button"><input type="submit" class="submit" value="Log In"></a>
+    </p>
+    <form action="{% url 'lib:signup' %}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td >Name:</td>
+                <td><input type="text" id="name" name="name"  placeholder="Name"></td>
+            </tr>
+            <tr>    
+                <td >Username:</td>
+                <td><input type="text" id="username" name="username"  placeholder="username"></td>
+            </tr>
+            <tr>
+                <td >Password:</td>
+                <td><input type="password" id="pwd" name="pwd"  placeholder="password"></td>
+            </tr>
+            <tr>
+                <td >Confirm Password:</td>
+                <td><input type="password" id="cpwd" name="cpwd" placeholder="confirm password"></td>
+            </tr>
+            <tr>
+                <td >Date of Birth:</td>
+                <td><input type="date" id="DOB" name="dob" ></td>
+            </tr>
+            <tr>
+                <td >Enter your email:</td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td >Phone:</td>
+                <td><input type="tel" id="phone0" name="phone0" pattern="[0-9]*"></td>
+            </tr>
+            <tr>
+                <td >Phone (Optional):</td>
+                <td><input type="tel" id="phone1" name="phone1" pattern="[0-9]*"></td>
+            </tr>
+            <tr>
+                <td >Address:</td>
+                <td><textarea name="addr" style="width:200px; height:100px;" placeholder="Address"></textarea></td>
+            </tr>
+            <tr>    
+                <td >City:</td>
+                <td><input type="text" id="city" name="city"  placeholder="City"></td>
+            </tr>
+            <tr>    
+                <td >PinCode:</td>
+                <td><input type="tel" id="pin" name="pin"></td>
+            </tr>
+            </table>
+            <table>
+            <tr>
+            <td><input type="submit" class="submit" value="Create Account"></td>
+            </td>
+        </table>
+      </form>
+      </center>
+</body>
+</html>

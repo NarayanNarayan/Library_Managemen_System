@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Publisher</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+            <a href="{% url 'lib:adminlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <h2>Add Publisher</h2>
+        <form action="{% url 'lib:add_publisher' %}" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Phone No 1:</td>
+                    <td><input type="tel" id="phone0" name="phone0"></td>
+                </tr>
+                <tr>
+                    <td>Phone No 2:</td>
+                    <td><input type="tel" id="phone1" name="phone1"></td>
+                </tr>
+                    <tr>
+                        <td >Address:</td>
+                        <td><textarea name="addr" style="width:200px; height:100px;" placeholder="Address"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" id="city" name="city"></td>
+                    </tr>
+                    <tr>
+                        <td>Pincode:</td>
+                        <td><input type="tel" id="pin" name="pin"></td>
+                    </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <center><td><input type="submit" class="submit" value="Add Publisher"></td></center>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

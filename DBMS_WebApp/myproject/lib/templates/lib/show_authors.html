@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Authors</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <h2>List of Authors</h2>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+            <a href="{% url 'lib:adminlogout' %}"><input type="submit" class="submit" value="Logout"></a>
+        </p>
+        <table id="t01">
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>dob</th>
+                <th>email</th>
+                <th>addr</th>
+                <th>city</th>
+                <th>pin</th>
+                <th>phone0</th>
+                <th>phone1</th>
+            </tr>
+            {% for row in result %}
+            <tr>
+              {% for col in row %}
+              <td> {{ col }} </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+        </table> 
+    </center>
+</body>
+</html>

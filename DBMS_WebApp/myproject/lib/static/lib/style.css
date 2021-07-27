@@ -1,0 +1,36 @@
+
+.submit {
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+    flood-color: rgb(75, 0, 146);
+    caret-color: brown;
+    border-color: cornflowerblue;
+    lighting-color: crimson;
+    flood-color: rgb(75, 0, 146);
+    stop-color: cyan;
+    background-color: rgb(68, 0, 95);
+}
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+  }
+  #t01 tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  #t01 th {
+    color: white;
+    background-color: black;
+  }
+#name,#username,#pwd,#cpwd,#post,#salary,#email,#phone0,#phone1,#city,#pin{
+  
+}
+
+* {
+
+    padding-right: 30px;
+    padding-top: 10px;
+
+}
+

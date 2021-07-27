@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <center>
+        <h2>Search Book</h2>
+        <p align="right">
+            <a href="{% url 'lib:home' %}"><input type="submit" class="submit" value="Homepage"></a>
+        </p>
+        <form action="{% url 'lib:searchbooks' %}">
+            <table>
+                <tr>
+                    <td>Book ID</td>
+                    <td><input type="tel" id="sbid" name="bid" value=""></td>
+                </tr>
+                <tr>
+                    <td>Book Name:</td>
+                    <td><input type="text" id="sbname" name="bname"  placeholder="Bookname" value=""></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td><input type="text" id="scategory" name="category"  placeholder="Category" value=""></td>
+                </tr>                
+                <tr>
+                    <td>Author:</td>
+                    <td><input type="text" id="sauth" name="auth"  placeholder="Author" value=""></td>
+                </tr>                
+                <tr>
+                    <td>Publisher:</td>
+                    <td><input type="text" id="spublisher" name="publisher"  placeholder="Publisher" value=""></td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <center><td><input type="submit" class="submit" value="Search"></td></center>
+                </tr>
+            </table>
+        </form>
+        <table id="t01">
+            <tr>
+              <th>Book ID</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Author</th>
+              <th>Publisher</th>
+              <!-- <th>Section</th -->
+              <th>Copies Left</th>
+            </tr>
+            {% for row in result %}
+            <tr>
+              {% for col in row %}
+              <td> {{ col }} </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+        </table> 
+    </center>
+</body>
+</html>

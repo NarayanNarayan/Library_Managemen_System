@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'lib/style.css' %}"/>
+</head>
+<body>
+    <h2>Edit Profile</h2>
+    <a href="{% url 'lib:chpwd' %}" type="button">Change Password</a><br><br>
+    <form action="/main.html">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"  placeholder="username" value=""><br><br>
+
+        <label for="DOB">Date of Birth</label><br>
+        <input type="date" id="DOB" name="DOB" value=""><br><br>
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="email" value=""><br><br>
+
+        <label for="phone0">Phone</label><br>
+        <input type="tel" id="phone0" name="phone0" pattern="[0-9]*" value=""><br><br>
+        <label for="phone1">Phone (Optional)</label><br>
+        <input type="tel" id="phone1" name="phone1" pattern="[0-9]*" value=""><br><br>
+        
+        <textarea name="message" style="width:200px; height:100px;" placeholder="Address" value=""></textarea><br>
+        <input type="text" id="city" name="city"  placeholder="City" value=""><br>
+        <label for="PinCode">PinCode</label><br>
+        <input type="tel" id="pin" name="PinCode" value=""><br><br>
+
+        <input type="submit" class="submit" value="Update">
+      </form>
+</body>
+</html>
